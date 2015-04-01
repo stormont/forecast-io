@@ -43,12 +43,17 @@ build-type:          Simple
 
 -- Extra files to be distributed with the package, such as examples or a 
 -- README.
--- extra-source-files:  
+extra-source-files:
+  README.md
 
 -- Constraint on the version of Cabal needed to build this package.
 cabal-version:       >=1.10
 
 tested-with:         GHC == 7.8
+
+homepage:            https://github.com/stormont/forecast-io
+
+bug-reports:         https://github.com/stormont/forecast-io/issues
 
 library
   -- Modules exported by the library.
