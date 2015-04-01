@@ -55,6 +55,10 @@ homepage:            https://github.com/stormont/forecast-io
 
 bug-reports:         https://github.com/stormont/forecast-io/issues
 
+source-repository head
+  type:      git
+  location:  https://github.com/stormont/forecast-io.git
+
 library
   -- Modules exported by the library.
   exposed-modules:
@@ -69,9 +73,9 @@ library
   
   -- Other library packages from which modules are imported.
   build-depends:
-    aeson,
-    base,
-    text
+    aeson >=0.8,
+    base >=4.7 && <4.8,
+    text >=1.2
   
   -- Directories containing source files.
   -- hs-source-dirs:      
