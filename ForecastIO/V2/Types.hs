@@ -1,4 +1,32 @@
 {-# LANGUAGE TemplateHaskell #-}
+-- |
+-- Module      : ForecastIO.V2.Types
+-- Copyright   : (c) 2015 Devan Stormont
+--
+-- License     : BSD-style
+-- Maintainer  : stormont@gmail.com
+-- Stability   : experimental
+-- Portability : GHC
+--
+-- This module defines data types for the various JSON types returned
+-- by the <https://developer.forecast.io/docs/v2 forecast.io > service.
+--
+-- These definitions are generally straight conversions from the
+-- original JSON. Use of the forecast.io service should return
+-- JSON that can be directly decoded into a 'Forecast' object:
+--
+-- > eitherDecode json :: Either String Forecast
+--
+-- Some of the 'ByteString' libraries seem not to parse certain unicode
+-- characters correctly (or maybe it's an 'Aeson' problem; this hasn't
+-- yet been determined). If your decoding fails, you may need to filter
+-- out certain of these characters before decoding. In particular, the
+-- degree symbol (Unicode character @\\176@) has been known to cause
+-- decoding errors.
+--
+-- Another thing to be wary of is that potentially any field is /not/
+-- guaranteed to be returned in the JSON. This effectively makes
+-- every definition live within a 'Maybe'.
 module ForecastIO.V2.Types
   ( DataPoint(..)
   , DataBlock(..)
@@ -14,17 +42,14 @@ import Data.Aeson.TH
 import Data.Text (Text, pack)
 
 
-{-
--- Base domain is: api.forecast.io
--- Usage: https://api.forecast.io/forecast/APIKEY/LATITUDE,LONGITUDE
--- Official documentation: https://developer.forecast.io/docs/v2
--}
-
 -----------------------------------------------------------
 -- EXPORTED
 -----------------------------------------------------------
 
 
+-- | Defines a single data point in the weather forecast. For a full
+-- explanation of the various records, please consult the
+-- <https://developer.forecast.io/docs/v2 official documentation >.
 data DataPoint =
   DataPoint
     { dataPoint_time                        :: Maybe Int
@@ -83,6 +108,8 @@ data DataPoint =
     } deriving (Show,Read)
 
 
+-- | Defines a summary "block" of information that can contain multiple
+-- 'DataPoint's.
 data DataBlock =
   DataBlock
     { dataBlock_summary :: Maybe Text
@@ -91,6 +118,8 @@ data DataBlock =
     } deriving (Show,Read)
 
 
+-- | Defines severe weather alerts that may be being broadcast by a
+-- variety of weather services.
 data Alerts =
   Alerts
     { alerts_title       :: Maybe Text
@@ -100,6 +129,7 @@ data Alerts =
     } deriving (Show,Read)
 
 
+-- | 'Flags' define general information about the returned data.
 data Flags =
   Flags
     { flags_darksky_unavailable :: Maybe Text
@@ -115,6 +145,9 @@ data Flags =
     } deriving (Show,Read)
 
 
+-- | This is the container type for the returned data. You /should/
+-- be able to just directly take the downloaded JSON and transform
+-- it into this data type.
 data Forecast =
   Forecast
     { forecast_latitude  :: Maybe Float

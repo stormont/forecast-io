@@ -16,7 +16,10 @@ version:             0.1.0.0
 synopsis:            A Haskell library for working with forecast.io data.
 
 -- A longer description of the package.
--- description:         
+description:
+  For more detailed documentation on the service, please refer to the
+  excellent documentation for the
+  <https://developer.forecast.io/docs/v2 forecast.io > service.
 
 -- The license under which the package is released.
 license:             BSD3
@@ -45,6 +48,7 @@ build-type:          Simple
 -- Constraint on the version of Cabal needed to build this package.
 cabal-version:       >=1.10
 
+tested-with:         GHC == 7.8
 
 library
   -- Modules exported by the library.
