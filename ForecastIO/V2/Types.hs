@@ -9,10 +9,10 @@
 -- Portability : GHC
 --
 -- This module defines data types for the various JSON types returned
--- by the <https://developer.forecast.io/docs/v2 forecast.io > service.
+-- by the <https://developer.forecast.io/docs/v2 Forecast.io > service.
 --
 -- These definitions are generally straight conversions from the
--- original JSON. Use of the forecast.io service should return
+-- original JSON. Use of the Forecast.io service should return
 -- JSON that can be directly decoded into a 'Forecast' object:
 --
 -- > eitherDecode json :: Either String Forecast

@@ -9,10 +9,10 @@
 -- Portability : GHC
 --
 -- This module builds a URI endpoint which can be used to download
--- data from forecast.io. 
+-- data from Forecast.io. 
 --
 -- For official documentation, see:
--- <https://developer.forecast.io/docs/v2 forecast.io, version 2 >.
+-- <https://developer.forecast.io/docs/v2 Forecast.io, version 2 >.
 -- Please start with this documentation for information about the general
 -- service; it's quite detailed.
 --
@@ -41,7 +41,7 @@ class Endpoint a where
   buildUri :: a -> T.Text
 
 
--- | A data type for defining a forecast.io endpoint.
+-- | A data type for defining a Forecast.io endpoint.
 --
 -- The supported list of languages is defined by the
 -- <https://developer.forecast.io/docs/v2 forecast.io documentation >.
