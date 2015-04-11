@@ -29,6 +29,8 @@ module ForecastIO.V2.URI
    , ForecastEndpoint(..)
    , GPS(..)
    , Units(..)
+   , mkForecastEndpoint
+   , mkGPS
    ) where
 
 import qualified Data.Text as T

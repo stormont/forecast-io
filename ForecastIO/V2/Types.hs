@@ -57,54 +57,54 @@ data DataPoint =
     , dataPoint_icon                        :: Maybe Text
     , dataPoint_sunriseTime                 :: Maybe Int
     , dataPoint_sunsetTime                  :: Maybe Int
-    , dataPoint_moonPhase                   :: Maybe Float
-    , dataPoint_moonPhaseError              :: Maybe Float
-    , dataPoint_nearestStormDistance        :: Maybe Float
-    , dataPoint_nearestStormDistanceError   :: Maybe Float
-    , dataPoint_nearestStormBearing         :: Maybe Float
-    , dataPoint_nearestStormBearingError    :: Maybe Float
-    , dataPoint_precipIntensity             :: Maybe Float
-    , dataPoint_precipIntensityError        :: Maybe Float
-    , dataPoint_precipIntensityMax          :: Maybe Float
-    , dataPoint_precipIntensityMaxError     :: Maybe Float
+    , dataPoint_moonPhase                   :: Maybe Double
+    , dataPoint_moonPhaseError              :: Maybe Double
+    , dataPoint_nearestStormDistance        :: Maybe Double
+    , dataPoint_nearestStormDistanceError   :: Maybe Double
+    , dataPoint_nearestStormBearing         :: Maybe Double
+    , dataPoint_nearestStormBearingError    :: Maybe Double
+    , dataPoint_precipIntensity             :: Maybe Double
+    , dataPoint_precipIntensityError        :: Maybe Double
+    , dataPoint_precipIntensityMax          :: Maybe Double
+    , dataPoint_precipIntensityMaxError     :: Maybe Double
     , dataPoint_precipIntensityMaxTime      :: Maybe Int
-    , dataPoint_precipProbability           :: Maybe Float
-    , dataPoint_precipProbabilityError      :: Maybe Float
+    , dataPoint_precipProbability           :: Maybe Double
+    , dataPoint_precipProbabilityError      :: Maybe Double
     , dataPoint_precipType                  :: Maybe Text
-    , dataPoint_precipAccumulation          :: Maybe Float
-    , dataPoint_precipAccumulationError     :: Maybe Float
-    , dataPoint_temperature                 :: Maybe Float
-    , dataPoint_temperatureError            :: Maybe Float
-    , dataPoint_temperatureMin              :: Maybe Float
-    , dataPoint_temperatureMinError         :: Maybe Float
+    , dataPoint_precipAccumulation          :: Maybe Double
+    , dataPoint_precipAccumulationError     :: Maybe Double
+    , dataPoint_temperature                 :: Maybe Double
+    , dataPoint_temperatureError            :: Maybe Double
+    , dataPoint_temperatureMin              :: Maybe Double
+    , dataPoint_temperatureMinError         :: Maybe Double
     , dataPoint_temperatureMinTime          :: Maybe Int
-    , dataPoint_temperatureMax              :: Maybe Float
-    , dataPoint_temperatureMaxError         :: Maybe Float
+    , dataPoint_temperatureMax              :: Maybe Double
+    , dataPoint_temperatureMaxError         :: Maybe Double
     , dataPoint_temperatureMaxTime          :: Maybe Int
-    , dataPoint_apparentTemperature         :: Maybe Float
-    , dataPoint_apparentTemperatureError    :: Maybe Float
-    , dataPoint_apparentTemperatureMin      :: Maybe Float
-    , dataPoint_apparentTemperatureMinError :: Maybe Float
+    , dataPoint_apparentTemperature         :: Maybe Double
+    , dataPoint_apparentTemperatureError    :: Maybe Double
+    , dataPoint_apparentTemperatureMin      :: Maybe Double
+    , dataPoint_apparentTemperatureMinError :: Maybe Double
     , dataPoint_apparentTemperatureMinTime  :: Maybe Int
-    , dataPoint_apparentTemperatureMax      :: Maybe Float
-    , dataPoint_apparentTemperatureMaxError :: Maybe Float
+    , dataPoint_apparentTemperatureMax      :: Maybe Double
+    , dataPoint_apparentTemperatureMaxError :: Maybe Double
     , dataPoint_apparentTemperatureMaxTime  :: Maybe Int
-    , dataPoint_dewPoint                    :: Maybe Float
-    , dataPoint_dewPointError               :: Maybe Float
-    , dataPoint_windSpeed                   :: Maybe Float
-    , dataPoint_windSpeedError              :: Maybe Float
-    , dataPoint_windBearing                 :: Maybe Float
-    , dataPoint_windBearingError            :: Maybe Float
-    , dataPoint_cloudCover                  :: Maybe Float
-    , dataPoint_cloudCoverError             :: Maybe Float
-    , dataPoint_humidity                    :: Maybe Float
-    , dataPoint_humidityError               :: Maybe Float
-    , dataPoint_pressure                    :: Maybe Float
-    , dataPoint_pressureError               :: Maybe Float
-    , dataPoint_visibility                  :: Maybe Float
-    , dataPoint_visibilityError             :: Maybe Float
-    , dataPoint_ozone                       :: Maybe Float
-    , dataPoint_ozoneError                  :: Maybe Float
+    , dataPoint_dewPoint                    :: Maybe Double
+    , dataPoint_dewPointError               :: Maybe Double
+    , dataPoint_windSpeed                   :: Maybe Double
+    , dataPoint_windSpeedError              :: Maybe Double
+    , dataPoint_windBearing                 :: Maybe Double
+    , dataPoint_windBearingError            :: Maybe Double
+    , dataPoint_cloudCover                  :: Maybe Double
+    , dataPoint_cloudCoverError             :: Maybe Double
+    , dataPoint_humidity                    :: Maybe Double
+    , dataPoint_humidityError               :: Maybe Double
+    , dataPoint_pressure                    :: Maybe Double
+    , dataPoint_pressureError               :: Maybe Double
+    , dataPoint_visibility                  :: Maybe Double
+    , dataPoint_visibilityError             :: Maybe Double
+    , dataPoint_ozone                       :: Maybe Double
+    , dataPoint_ozoneError                  :: Maybe Double
     } deriving (Show,Read)
 
 
@@ -150,10 +150,10 @@ data Flags =
 -- it into this data type.
 data Forecast =
   Forecast
-    { forecast_latitude  :: Maybe Float
-    , forecast_longitude :: Maybe Float
+    { forecast_latitude  :: Maybe Double
+    , forecast_longitude :: Maybe Double
     , forecast_timezone  :: Maybe Text
-    , forecast_offset    :: Maybe Float
+    , forecast_offset    :: Maybe Double
     , forecast_currently :: Maybe DataPoint
     , forecast_minutely  :: Maybe DataBlock
     , forecast_hourly    :: Maybe DataBlock
